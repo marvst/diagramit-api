@@ -50,6 +50,8 @@ class Diagram
     def self.identify_strategy_for source
         if source.include? GITHUB_DOMAIN or source.include? GITLAB_DOMAIN then return source.sub 'blob', 'raw' end
         if source.include? GOOGLE_DRIVE_DOMAIN then return GOOGLE_DRIVE_BASE_URL + source.split('id=')[1] end
+        
+        source
     rescue => err
         raise StandardError.new "Fail to identify strategy for dealing with source because: #{err.to_s}"
     end
