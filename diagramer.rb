@@ -1,4 +1,4 @@
-require 'sinatra'
+# require 'sinatra'
 require './src/diagram'
 
 # Disable X-Frame-Options header to allow the page iframing
