@@ -10,10 +10,6 @@ end
 
 set :protection, false
 
-get '/' do
-  erb :generator_template
-end
-
 get '/v1/:diagram_type/generate' do
   source = Base64.decode64(params['source'])
   diagram_type = params['diagram_type']
